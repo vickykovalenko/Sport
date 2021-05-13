@@ -1,0 +1,74 @@
+﻿@model Sport.Payment
+
+@{
+    ViewData["Title"] = "Редагувати";
+}
+
+<h1>Редагування інформації про оплату</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="ClientId" class="control-label"></label>
+                <select asp-for="ClientId" class="form-control" asp-items="ViewBag.ClientId"></select>
+                <span asp-validation-for="ClientId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PassesId" class="control-label"></label>
+                <select asp-for="PassesId" class="form-control" asp-items="ViewBag.PassesId"></select>
+                <span asp-validation-for="PassesId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsPaymentDone" class="control-label"></label>
+                <input asp-for="IsPaymentDone" class="form-control" />
+                <span asp-validation-for="IsPaymentDone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sum" class="control-label"></label>
+                <input asp-for="Sum" class="form-control" />
+                <span asp-validation-for="Sum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClCardNumber" class="control-label"></label>
+                <input asp-for="ClCardNumber" class="form-control" />
+                <span asp-validation-for="ClCardNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyCardNumber" class="control-label"></label>
+                <input asp-for="CompanyCardNumber" class="form-control" />
+                <span asp-validation-for="CompanyCardNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsOverPay" class="control-label"></label>
+                <input asp-for="IsOverPay" class="form-control" />
+                <span asp-validation-for="IsOverPay" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsDebt" /> @Html.DisplayNameFor(model => model.IsDebt)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Зберегти" class="btn btn-dark" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">До списку оплат</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

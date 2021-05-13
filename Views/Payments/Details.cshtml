@@ -1,0 +1,72 @@
+﻿@model Sport.Payment
+
+@{
+    ViewData["Title"] = "Інформація про оплату";
+}
+
+<h1>Інформація про оплату</h1>
+
+<div>
+
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Month)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Month)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IsPaymentDone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsPaymentDone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Sum)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Sum)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ClCardNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ClCardNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CompanyCardNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CompanyCardNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IsOverPay)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsOverPay)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IsDebt)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsDebt)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Client)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Client.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Passes)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Passes.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Редагувати</a> |
+    <a asp-action="Index">До списку оплат</a>
+</div>
