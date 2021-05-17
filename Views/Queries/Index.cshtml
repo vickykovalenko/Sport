@@ -1,0 +1,186 @@
+﻿@model Query
+
+@{ ViewData["Title"] = "Запити"; }
+
+<h1> Прості запити</h1>
+<hr />
+
+<p style="font-size:20px">
+    <b>Запит 1</b>
+</p>
+<p style="font-size:17px">
+    Знайти імена та прізвища клієнтів, які займаються з обраним тренером.
+</p>
+<div class="row">
+    <div class="col-md-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form asp-action="SimpleQ1">
+            <div class="form-group">
+                <label class="control-label">Ім'я та прізвище тренера </label>
+                <select asp-for="TrainerName" asp-items="@ViewBag.TrainerNames" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Надіслати" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
+
+<p style="font-size:20px">
+    <b>Запит 2</b>
+</p>
+
+<p style="font-size:17px">
+    Знайти імена та прізвища клієнтів, які займаються в обраному залі.
+</p>
+<div class="row">
+    <div class="col-md-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form asp-action="SimpleQ2">
+            <div class="form-group">
+                <label class="control-label">Назва залу</label>
+                <select asp-for="GymName" asp-items="@ViewBag.GymNames" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Надіслати" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
+
+<p style="font-size:20px">
+    <b>Запит 3</b>
+</p>
+
+<p style="font-size:17px">
+    Знайти імена та прізвища тренерів, у яких заробітня плата якого більше за введене число.
+</p>
+<div class="row">
+    <div class="col-md-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form asp-action="SimpleQ3">
+            <div class="form-group">
+                <input asp-for="TrainerSalary" class="form-control" />
+                <span class="text-danger">@ViewBag.TrainerSalaryError</span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Надіслати" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
+
+<p style="font-size:20px">
+    <b>Запит 4</b>
+</p>
+
+<p style="font-size:17px">
+    Знайти імена та прізвища тренерів, які займаються з клієнтами, в яких є оплата за введений місяць.
+</p>
+<div class="row">
+    <div class="col-md-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form asp-action="SimpleQ4">
+            <div class="form-group">
+                <input asp-for="PaymentMonth" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Надіслати" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
+
+<p style="font-size:20px">
+    <b>Запит 5</b>
+</p>
+
+<p style="font-size:17px">
+    Знайти імена та прізвища тренерів, у яких є введене число клієнтів.
+</p>
+<div class="row">
+    <div class="col-md-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form asp-action="SimpleQ5">
+            <div class="form-group">
+                <input asp-for="CountClients" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Надіслати" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
+
+<h1> Множинні запити</h1>
+<hr />
+<p style="font-size:20px">
+    <b>Запит 1</b>
+</p>
+
+<p style="font-size:17px">
+    Знайти імена та прізвища тренерів, у яких є стільки ж клієнтів, як і у вибраного тренера.
+</p>
+<div class="row">
+    <div class="col-md-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form asp-action="MultipleQ1">
+            <div class="form-group">
+                <label class="control-label">Ім'я та прізвище тренера </label>
+                <select asp-for="TrainerName" asp-items="@ViewBag.TrainerNames" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Надіслати" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
+<p style="font-size:20px">
+    <b>Запит 2</b>
+</p>
+
+<p style="font-size:17px">
+    Знайти імена клієнтів, які займаються з обраним тренером або які відвідують обраний зал
+    <div class="row">
+        <div class="col-md-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <form asp-action="MultipleQ2">
+                <div class="form-group">
+                    <label class="control-label">Тренер </label>
+                    <select asp-for="TrainerName" asp-items="@ViewBag.TrainerNames" class="form-control"></select>
+                    <label class="control-label">Зал</label>
+                    <select asp-for="GymName" asp-items="@ViewBag.GymNames" class="form-control"></select>
+                </div>
+                <div class="form-group">
+
+                    <input type="submit" value="Надіслати" class="btn btn-success" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <hr />
+
+<p style="font-size:20px">
+    <b>Запит 2</b>
+</p>
+
+<p style="font-size:17px">
+    Знайти імена клієнтів, які відвідують усі зали
+    <div class="row">
+        <div class="col-md-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <form asp-action="MultipleQ3">
+               
+
+            <input type="submit" value="Надіслати" class="btn btn-success" />
+            
+            </form>
+        </div>
+    </div>
+    <hr />

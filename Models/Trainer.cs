@@ -12,7 +12,7 @@ namespace Sport
         {
             Clients = new HashSet<Client>();
         }
-        private const string reg_email = @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z";
+        //private const string reg_email = @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z";
 
         public int Id { get; set; }
         [Display(Name = "Ім'я")]
@@ -35,7 +35,7 @@ namespace Sport
         [RegularExpression(@"^[0-9][0-9]{4,6}$", ErrorMessage = "Некоректна довжина")]
         public string Phone { get; set; }
         [Display(Name = "Електронна пошта")]
-        [RegularExpression(reg_email, ErrorMessage = "Некоректна електронна пошта")]
+        //[RegularExpression(reg_email, ErrorMessage = "Некоректна електронна пошта")]
         [Required(ErrorMessage = "Поле не повинно бути порожнім")]
         public string Email { get; set; }
 

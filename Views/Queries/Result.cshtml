@@ -1,0 +1,262 @@
+﻿@model Query
+
+@{ ViewData["Title"] = "Результат"; }
+
+<h1>Результат</h1>
+<hr />
+
+@if (string.IsNullOrEmpty(Model.Error))
+{
+
+    @if (Model.QueryId.Equals("S1"))
+    {
+        <p style="font-size:20px">
+            <b>Імена та прізвища клієнтів, що займаються у тренера @Model.TrainerName </b>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Ім'я
+                    </th>
+                    <th>
+                        Прізвище
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+           @for (int i = 0; i < Model.ClientNames.Count; i++)
+           {
+                <tr>
+                    <td>
+                        @Model.ClientNames[i]
+                    </td>
+                    <td>
+                        @Model.ClientSurnames[i]
+                    </td>
+                </tr>
+           }
+            </tbody>
+        </table>
+    }
+    else if (Model.QueryId.Equals("S2"))
+    {
+        <p style="font-size:20px">
+            <b>Імена та прізвища клієнтів, що займаються у залі "@Model.GymName" </b>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Ім'я
+                    </th>
+                    <th>
+                        Прізвище
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+           @for (int i = 0; i < Model.ClientNames.Count; i++)
+           {
+                <tr>
+                    <td>
+                        @Model.ClientNames[i]
+                    </td>
+                    <td>
+                        @Model.ClientSurnames[i]
+                    </td>
+                </tr>
+           }
+            </tbody>
+        </table>
+    }
+    else if (Model.QueryId.Equals("S3"))
+    {
+         <p style="font-size:20px">
+            <b>Імена та прізвища клієнтів, що займаються з тренером, в якого заробітня плата більше за @Model.TrainerSalary </b>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Ім'я
+                    </th>
+                    <th>
+                        Прізвище
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+           @for (int i = 0; i < Model.ClientNames.Count; i++)
+           {
+                <tr>
+                    <td>
+                        @Model.ClientNames[i]
+                    </td>
+                    <td>
+                        @Model.ClientSurnames[i]
+                    </td>
+                </tr>
+           }
+            </tbody>
+        </table>
+
+    }
+    else if (Model.QueryId.Equals("S4"))
+    {
+         <p style="font-size:20px">
+            <b>Імена та прізвища тренерів, які займаються з клієнтами, у яких є оплата за @Model.PaymentMonth </b>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Тренер
+                    </th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+           @for (int i = 0; i < Model.TrainerNames.Count; i++)
+           {
+                <tr>
+                    <td>
+                        @Model.TrainerNames[i]
+                    </td>
+                    
+                </tr>
+           }
+            </tbody>
+        </table>
+
+    }
+    else if (Model.QueryId.Equals("S5"))
+    {
+         <p style="font-size:20px">
+            <b>Імена та прізвища тренерів, у яких кількість клієнтів складає @Model.CountClients  </b>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Тренер
+                    </th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+           @for (int i = 0; i < Model.TrainerNames.Count; i++)
+           {
+                <tr>
+                    <td>
+                        @Model.TrainerNames[i]
+                    </td>
+                    
+                </tr>
+           }
+            </tbody>
+        </table>
+
+    } 
+    else if (Model.QueryId.Equals("M1"))
+    {
+         <p style="font-size:20px">
+            <b>Імена та прізвища тренерів, у яких кількість клієнтів така ж, як і у тренера @Model.TrainerName  </b>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Тренер
+                    </th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+           @for (int i = 0; i < Model.TrainerNames.Count; i++)
+           {
+                <tr>
+                    <td>
+                        @Model.TrainerNames[i]
+                    </td>
+                    
+                </tr>
+           }
+            </tbody>
+        </table>
+
+    } 
+    else if (Model.QueryId.Equals("M2"))
+    {
+         <p style="font-size:20px">
+            <b>Електронні пошти клієнтів, які займаються з тренером @Model.TrainerName або відвідують зал @Model.GymName   </b>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Електронна пошта
+                    </th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+           @for (int i = 0; i < Model.ClientEmails.Count; i++)
+           {
+                <tr>
+                    <td>
+                        @Model.ClientEmails[i]
+                    </td>
+                    
+                </tr>
+           }
+            </tbody>
+        </table>
+
+    }
+    else if (Model.QueryId.Equals("M3"))
+    {
+         <p style="font-size:20px">
+            <b>Імена клієнтів, які відвідують усі зали   </b>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Ім'я
+                    </th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+           @for (int i = 0; i < Model.ClientNames.Count; i++)
+           {
+                <tr>
+                    <td>
+                        @Model.ClientNames[i]
+                    </td>
+                    
+                </tr>
+           }
+            </tbody>
+        </table>
+
+    } 
+}
+<table>
+    <tr>
+        <td>
+            <form method="get" asp-controller="Queries" asp-action="Index">
+                <input type="submit" class="btn btn-primary" value="Назад до запитів" />
+            </form>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+            <form method="get" asp-controller="Home" asp-action="Index">
+                <input type="submit" class="btn btn-primary" value="На головну" />
+            </form>
+        </td>
+    </tr>
+</table>

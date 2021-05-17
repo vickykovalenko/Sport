@@ -23,14 +23,16 @@ namespace Sport
         public string Name { get; set; }
         [Display(Name = "Прізвище")]
         [Required(ErrorMessage = "Поле не повинно бути порожнім ")]
+        
+
 
         public string Surname { get; set; }
         [Display(Name = "Номер телефону")]
         [Required(ErrorMessage = "Поле не повинно бути порожнім ")]
+        [RegularExpression(@"^[0-9]{6}$", ErrorMessage = "Некоректна довжина")]
 
 
         public string Phone { get; set; }
-        [RegularExpression(reg_email, ErrorMessage = "Некоректна електронна пошта")]
         [Display(Name = "Електронна пошта")]
         [Required(ErrorMessage = "Поле не повинно бути порожнім ")]
         [StringLength(30)]

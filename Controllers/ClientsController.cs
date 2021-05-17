@@ -48,7 +48,7 @@ namespace Sport.Controllers
         // GET: Clients/Create
         public IActionResult Create()
         {
-            ViewData["TrainerId"] = new SelectList(_context.Trainers, "Id", "Email");
+            ViewData["TrainerId"] = new SelectList(_context.Trainers, "Id", "Name");
             return View();
         }
 
@@ -65,7 +65,7 @@ namespace Sport.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TrainerId"] = new SelectList(_context.Trainers, "Id", "Email", client.TrainerId);
+            ViewData["TrainerId"] = new SelectList(_context.Trainers, "Id", "Name", client.TrainerId);
             return View(client);
         }
 
@@ -82,7 +82,7 @@ namespace Sport.Controllers
             {
                 return NotFound();
             }
-            ViewData["TrainerId"] = new SelectList(_context.Trainers, "Id", "Email", client.TrainerId);
+            ViewData["TrainerId"] = new SelectList(_context.Trainers, "Id", "Name", client.TrainerId);
             return View(client);
         }
 
@@ -118,7 +118,7 @@ namespace Sport.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TrainerId"] = new SelectList(_context.Trainers, "Id", "Email", client.TrainerId);
+            ViewData["TrainerId"] = new SelectList(_context.Trainers, "Id", "Name", client.TrainerId);
             return View(client);
         }
 

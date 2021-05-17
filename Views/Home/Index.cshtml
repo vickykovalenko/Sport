@@ -1,31 +1,36 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Головна сторінка";
 }
 <div id="div1">
     <div class="text-center">
         <h1 class="display-3 text-capitalize text-white">SportDatabase</h1>
     </div>
-        <form method="get" asp-controller="Gyms" asp-action="Index"> 
-            <p align="center">
-                <input type="submit" class="btn btn-light btn-lg" style="width:200px" value="Спортивні зали" />
-            </p>
-        </form>
-        <form method="get" asp-controller="Passes" asp-action="Index">
-            <p align="center">
-                <input type="submit" class="btn btn-light btn-lg" style="width:200px" value="Абонементи" />
-            </p>
-        </form>
-        <form method="get" asp-controller="Trainers" asp-action="Index">
-            <p align="center">
-                <input type="submit" class="btn btn-light btn-lg" style="width:200px" value="Тренери" />
-            </p>
-        </form>
-        <form method="get" asp-controller="Clients" asp-action="Index">
-            <p align="center">
-                <input type="submit" class="btn btn-light btn-lg" style="width:200px" value="Клієнти" />
-            </p>
-        </form>
-    </div>
+    <form method="get" asp-controller="Gyms" asp-action="Index">
+        <p align="center">
+            <input type="submit" class="btn btn-light btn-lg" style="width:200px" value="Спортивні зали" />
+        </p>
+    </form>
+    <form method="get" asp-controller="Passes" asp-action="Index">
+        <p align="center">
+            <input type="submit" class="btn btn-light btn-lg" style="width:200px" value="Абонементи" />
+        </p>
+    </form>
+    <form method="get" asp-controller="Trainers" asp-action="Index">
+        <p align="center">
+            <input type="submit" class="btn btn-light btn-lg" style="width:200px" value="Тренери" />
+        </p>
+    </form>
+    <form method="get" asp-controller="Clients" asp-action="Index">
+        <p align="center">
+            <input type="submit" class="btn btn-light btn-lg" style="width:200px" value="Клієнти" />
+        </p>
+    </form>
+    <form method="get" asp-controller="Queries" asp-action="Index">
+        <p align="center">
+            <input type="submit" class="btn btn-light btn-lg" style="width:200px" value="Запити" />
+        </p>
+    </form>
+</div>
 
 <style>
     #div1 {

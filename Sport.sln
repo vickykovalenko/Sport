@@ -3,7 +3,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sport", "Sport.csproj", "{82BEF995-812A-43A0-851E-385D779D5A91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sport", "Sport.csproj", "{82BEF995-812A-43A0-851E-385D779D5A91}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{84D38DCA-6924-4BE1-A4B1-F5590390021F}"
+	ProjectSection(SolutionItems) = preProject
+		Query.cs = Query.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Queries", "Queries", "{BD8B4C1C-F6CC-4C75-B7C1-7FA5069A444D}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Documents\SQL Server Management Studio\Multiple_query_1.sql = ..\..\..\Documents\SQL Server Management Studio\Multiple_query_1.sql
+		..\..\..\Documents\SQL Server Management Studio\Multiple_query_2.sql = ..\..\..\Documents\SQL Server Management Studio\Multiple_query_2.sql
+		..\..\..\Documents\SQL Server Management Studio\Multiple_query_3.sql = ..\..\..\Documents\SQL Server Management Studio\Multiple_query_3.sql
+		..\..\..\Documents\SQL Server Management Studio\Simple_query_1.sql = ..\..\..\Documents\SQL Server Management Studio\Simple_query_1.sql
+		..\..\..\Documents\SQL Server Management Studio\Simple_query_2.sql = ..\..\..\Documents\SQL Server Management Studio\Simple_query_2.sql
+		..\..\..\Documents\SQL Server Management Studio\Simple_query_3.sql = ..\..\..\Documents\SQL Server Management Studio\Simple_query_3.sql
+		..\..\..\Documents\SQL Server Management Studio\Simple_query_4.sql = ..\..\..\Documents\SQL Server Management Studio\Simple_query_4.sql
+		..\..\..\Documents\SQL Server Management Studio\Simple_query_5.sql = ..\..\..\Documents\SQL Server Management Studio\Simple_query_5.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
