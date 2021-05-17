@@ -45,9 +45,23 @@
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">До списку клієнтів</a>
-</div>
+<table>
+    <tr>
+        <td>
+            <form method="get" asp-controller="Clients" asp-action="Index">
+                <input type="submit" class="btn btn-secondary" value="До списку клієнтів" />
+            </form>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+            <form method="get" asp-controller="Home" asp-action="Index">
+                <input type="submit" class="btn btn-secondary" value="Повернутись до меню" />
+            </form>
+        </td>
+    </tr>
+</table>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

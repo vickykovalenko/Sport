@@ -18,12 +18,16 @@ namespace Sport
         public int Id { get; set; }
         [Display(Name = "Ім'я")]
         [Required(ErrorMessage = "Поле не повинно бути порожнім ")]
+        [RegularExpression(@"^[А-Яа-яёЁЇїІіЄєҐґ]+", ErrorMessage = "Поле має містити лише букви")]
+
 
 
         public string Name { get; set; }
         [Display(Name = "Прізвище")]
         [Required(ErrorMessage = "Поле не повинно бути порожнім ")]
-        
+        [RegularExpression(@"^[А-Яа-яёЁЇїІіЄєҐґ]+", ErrorMessage = "Поле має містити лише букви")]
+
+
 
 
         public string Surname { get; set; }

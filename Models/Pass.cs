@@ -16,6 +16,8 @@ namespace Sport
         public int Id { get; set; }
         [Display(Name = "Вид абонементу")]
         [Required(ErrorMessage = "Поле не повинно бути порожнім")]
+        [RegularExpression(@"^[А-Яа-яёЁЇїІіЄєҐґ]+", ErrorMessage = "Поле має містити лише букви")]
+
         public string Description { get; set; }
         [Display(Name = "Ціна")]
         [RegularExpression(@"^[0-9][0-9]{1,6}$", ErrorMessage = "Некоректна довжина")]
