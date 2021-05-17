@@ -67,6 +67,22 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Редагувати</a> |
-    <a asp-action="Index">До списку оплат</a>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Редагувати</a> 
 </div>
+<table>
+    <tr>
+        <td>
+            <form method="get" asp-controller="Payments" asp-action="Index">
+                <input type="submit" class="btn btn-secondary" value="До списку оплат" />
+            </form>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+            <form method="get" asp-controller="Home" asp-action="Index">
+                <input type="submit" class="btn btn-secondary" value="Повернутись до меню" />
+            </form>
+        </td>
+    </tr>
+</table>

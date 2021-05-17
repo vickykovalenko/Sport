@@ -19,7 +19,7 @@
                 @Html.DisplayNameFor(model => model.Price)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Gym)
+                @Html.DisplayNameFor(model => model.Gym.Name)
             </th>
             <th></th>
         </tr>
@@ -34,7 +34,7 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Gym.Id)
+                @Html.DisplayFor(modelItem => item.Gym.Name)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Редагувати</a> |

@@ -47,7 +47,7 @@ namespace Sport.Controllers
         // GET: Passes/Create
         public IActionResult Create()
         {
-            ViewData["GymId"] = new SelectList(_context.Gyms, "Id", "Id");
+            ViewData["GymId"] = new SelectList(_context.Gyms, "Id", "Name");
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace Sport.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["GymId"] = new SelectList(_context.Gyms, "Id", "Id", pass.GymId);
+            ViewData["GymId"] = new SelectList(_context.Gyms, "Id", "Name", pass.GymId);
             return View(pass);
         }
 
