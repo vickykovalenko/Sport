@@ -27,7 +27,7 @@ namespace Sport
 
 
         public string Description { get; set; }
-        [StringLength(20)]
+      
         [RegularExpression(@"^[0-9]+$", ErrorMessage = "Поле має містити лише цифри")]
         [Required(ErrorMessage = "Поле не повинно бути порожнім")]
         [Display(Name = "Площа")]

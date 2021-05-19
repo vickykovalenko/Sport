@@ -21,7 +21,7 @@ namespace Sport
         public string Month { get; set; }
         [Required(ErrorMessage = "Поле не повинно бути порожнім")]
         [Display(Name = "Стан оплати")]
-        [StringLength(5)]
+    
         [RegularExpression(@"^[a-zA-Z]+", ErrorMessage = "Поле має містити лише англійські букви")]
 
 
@@ -42,7 +42,7 @@ namespace Sport
         public string CompanyCardNumber { get; set; }
         [Required(ErrorMessage = "Поле не повинно бути порожнім")]
         [Display(Name = "Чи є переплата")]
-        [StringLength(5)]
+       
         [RegularExpression(@"^[a-zA-Z]+", ErrorMessage = "Поле має містити лише англійські букви")]
 
         public bool? IsOverPay { get; set; }
