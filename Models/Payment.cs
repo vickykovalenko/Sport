@@ -14,13 +14,17 @@ namespace Sport
         [Display(Name = "Id абонемента")]
         public int PassesId { get; set; }
         [Required(ErrorMessage = "Поле не повинно бути порожнім")]
-        [StringLength(50)]
+        [StringLength(20)]
         [Display(Name = "Місяць")]
         [RegularExpression(@"^[А-Яа-яёЁЇїІіЄєҐґ]+", ErrorMessage = "Поле має містити лише букви")]
 
         public string Month { get; set; }
         [Required(ErrorMessage = "Поле не повинно бути порожнім")]
         [Display(Name = "Стан оплати")]
+        [StringLength(5)]
+        [RegularExpression(@"^[a-zA-Z]+", ErrorMessage = "Поле має містити лише англійські букви")]
+
+
         public bool? IsPaymentDone { get; set; }
         [Required(ErrorMessage = "Поле не повинно бути порожнім")]
         [Display(Name = "Сума")]
@@ -38,9 +42,13 @@ namespace Sport
         public string CompanyCardNumber { get; set; }
         [Required(ErrorMessage = "Поле не повинно бути порожнім")]
         [Display(Name = "Чи є переплата")]
+        [StringLength(5)]
+        [RegularExpression(@"^[a-zA-Z]+", ErrorMessage = "Поле має містити лише англійські букви")]
+
         public bool? IsOverPay { get; set; }
         [Required(ErrorMessage = "Поле не повинно бути порожнім")]
         [Display(Name = "Чи є борг")]
+
         public bool IsDebt { get; set; }
 
         public virtual Client Client { get; set; }

@@ -30,6 +30,8 @@ namespace Sport.Controllers
         private const string mq3 = @"C:\Users\Bakup\Documents\SQL Server Management Studio\Multiple_query_3.sql";
         private const string mq4 = @"C:\Users\Bakup\Documents\SQL Server Management Studio\SQLQuery1.sql";
 
+        private const string tq1 = @"C:\Users\Bakup\Documents\SQL Server Management Studio\TempQuery_1.sql";
+        private const string tq2 = @"C:\Users\Bakup\Documents\SQL Server Management Studio\TempQuery_2.sql";
 
 
         private const string error_client = "Немає відвідувачів з такою умовою.";
@@ -56,7 +58,7 @@ namespace Sport.Controllers
             ViewBag.TrainerSalaries = anyTrainers ? new SelectList(_context.Trainers, "Salary", "Salary") : empty;
             ViewBag.PaymentMonths = anyPayments ? new SelectList(_context.Payments, "Month", "Month") : empty;
             ViewBag.ClientEmails = anyClients ? new SelectList(_context.Clients, "Email", "Email") : empty;
-
+            ViewBag.ClientIds = anyClients ? new SelectList(_context.Clients, "Id", "Id") : empty;
 
 
             return View();
@@ -385,8 +387,87 @@ namespace Sport.Controllers
 
             return RedirectToAction("Result", queryModel);
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult TestQ1(Query queryModel)
+        {
+            queryModel.GymNames = new List<string>();
 
-            public IActionResult Result(Query queryResult)
+            string query = System.IO.File.ReadAllText(tq1);
+
+            queryModel.QueryId = "T1";
+            queryModel.ClientNames = new List<string>();
+            using (var connection = new SqlConnection(connections))
+            {
+                connection.Open();
+                using (var command = new SqlCommand(query, connection))
+                {
+                    command.ExecuteNonQuery();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        int flag = 0;
+                        while (reader.Read())
+                        {
+
+                            queryModel.GymNames.Add(reader.GetString(0));
+
+                            flag++;
+                        }
+                        if (flag == 0)
+                        {
+                            queryModel.ErrorFlag = 1;
+                            queryModel.Error = error_client;
+                        }
+                    }
+                }
+                connection.Close();
+            }
+            return RedirectToAction("Result", queryModel);
+
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult TestQ2(Query queryModel)
+        {
+            queryModel.ClientNames = new List<string>();
+
+            string query = System.IO.File.ReadAllText(tq2);
+            query = query.Replace("X", queryModel.ClientId.ToString());
+            query = query.Replace("\r\n", " ");
+            query = query.Replace('\t', ' ');
+            queryModel.QueryId = "T2";
+
+            using (var connection = new SqlConnection(connections))
+            {
+                connection.Open();
+                using (var command = new SqlCommand(query, connection))
+                {
+                    command.ExecuteNonQuery();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        int flag = 0;
+                        while (reader.Read())
+                        {
+
+                            queryModel.ClientNames.Add(reader.GetString(0));
+
+                            flag++;
+                        }
+                        if (flag == 0)
+                        {
+                            queryModel.ErrorFlag = 1;
+                            queryModel.Error = error_client;
+                        }
+                    }
+                }
+                connection.Close();
+            }
+            return RedirectToAction("Result", queryModel);
+
+
+        }
+
+        public IActionResult Result(Query queryResult)
         {
             return View(queryResult);
         }

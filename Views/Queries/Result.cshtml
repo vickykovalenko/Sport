@@ -242,6 +242,92 @@
         </table>
 
     } 
+    else if (Model.QueryId.Equals("M3"))
+    {
+         <p style="font-size:20px">
+            <b>Імена клієнтів, які відвідують усі зали   </b>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Ім'я
+                    </th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+           @for (int i = 0; i < Model.ClientNames.Count; i++)
+           {
+                <tr>
+                    <td>
+                        @Model.ClientNames[i]
+                    </td>
+                    
+                </tr>
+           }
+            </tbody>
+        </table>
+
+    }
+    
+    
+    else if (Model.QueryId.Equals("T1"))
+    {
+         <p style="font-size:20px">
+            <b>Назви залів, в яких займаються більше ніж середня кількість усіх клієнтів</b>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Ім'я
+                    </th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+           @for (int i = 0; i < Model.GymNames.Count; i++)
+           {
+                <tr>
+                    <td>
+                        @Model.GymNames[i]
+                    </td>
+                    
+                </tr>
+           }
+            </tbody>
+        </table>
+
+    }
+    else if (Model.QueryId.Equals("T2"))
+    {
+         <p style="font-size:20px">
+             <b>Знайти імена клієнтів, які займаються принаймні в одному ж залі, що й клієнт з  Id = @Model.ClientId</b>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Ім'я клієнта
+                    </th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+           @for (int i = 0; i < Model.ClientNames.Count; i++)
+           {
+                <tr>
+                    <td>
+                        @Model.ClientNames[i]
+                    </td>
+                    
+                </tr>
+           }
+            </tbody>
+        </table>
+
+    }
 }
 <table>
     <tr>

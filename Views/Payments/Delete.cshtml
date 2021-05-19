@@ -54,16 +54,22 @@
             @Html.DisplayFor(model => model.IsDebt)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Client)
+            @Html.DisplayNameFor(model => model.Client.Name)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Client.Id)
+            @Html.DisplayFor(model => model.Client.Name)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Passes)
+            @Html.DisplayNameFor(model => model.Client.Surname)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Passes.Id)
+            @Html.DisplayFor(model => model.Client.Surname)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Passes.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Passes.Description)
         </dd>
     </dl>
 

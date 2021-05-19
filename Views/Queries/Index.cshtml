@@ -55,7 +55,7 @@
 </p>
 
 <p style="font-size:17px">
-    Знайти імена та прізвища тренерів, у яких заробітня плата якого більше за введене число.
+    Знайти імена та прізвища тренерів, у яких заробітна плата якого більше за введене число.
 </p>
 <div class="row">
     <div class="col-md-4">
@@ -183,6 +183,44 @@
             </form>
         </div>
     </div>
+
+    <hr />
+<p style="font-size:20px">
+    <b>Тестовий запит 1</b>
+</p>
+
+<p style="font-size:17px">
+    Знайти назви спортивних залів, в яких займається більше ніж середня кількість клієнтів для кожного залу.
+    <div class="row">
+        <div class="col-md-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <form asp-action="TestQ1">
+                <input type="submit" value="Надіслати" class="btn btn-success" />
+            </form>
+        </div>
+    </div>
+    <hr />
+    
+<p style="font-size:20px">
+    <b>Тестовий запит 2</b>
+</p>
+
+<p style="font-size:17px">
+    Знайти імена клієнтів, які займаються принаймні в одному ж залі, що й клієнт з обраним Id. </p>
+<div class="row">
+    <div class="col-md-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form asp-action="TestQ2">
+            <div class="form-group">
+                <label class="control-label">Id клієнта </label>
+                <select asp-for="ClientId" asp-items="@ViewBag.ClientIds" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Надіслати" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
     <hr />
     <form method="get" asp-controller="Home" asp-action="Index">
         <input type="submit" class="btn btn-secondary" value="Повернутись до меню" />

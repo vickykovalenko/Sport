@@ -9,7 +9,7 @@ namespace Sport
 	public class Query
 	{
 		public string QueryId { get; set; }
-
+		public int ClientId { get; set; }
 		public string TrainerName{ get; set; }
 		public List<string> TrainerNames { get; set; }
 
