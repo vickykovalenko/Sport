@@ -167,7 +167,7 @@
     <hr />
 
 <p style="font-size:20px">
-    <b>Запит 2</b>
+    <b>Запит 3</b>
 </p>
 
 <p style="font-size:17px">
@@ -176,11 +176,14 @@
         <div class="col-md-4">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <form asp-action="MultipleQ3">
-               
 
-            <input type="submit" value="Надіслати" class="btn btn-success" />
-            
+
+                <input type="submit" value="Надіслати" class="btn btn-success" />
+
             </form>
         </div>
     </div>
     <hr />
+    <form method="get" asp-controller="Home" asp-action="Index">
+        <input type="submit" class="btn btn-secondary" value="Повернутись до меню" />
+    </form>

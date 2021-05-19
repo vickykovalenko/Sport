@@ -20,7 +20,7 @@ namespace Sport
 
         public string Description { get; set; }
         [Display(Name = "Ціна")]
-        [RegularExpression(@"^[0-9][0-9]{1,6}$", ErrorMessage = "Некоректна довжина")]
+        [RegularExpression(@"^[0-9]+", ErrorMessage = "Поле має містити лише цифри")]
         [Required(ErrorMessage = "Поле не повинно бути порожнім")]
         public decimal? Price { get; set; }
         [Display(Name = "Зал")]

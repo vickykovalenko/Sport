@@ -19,6 +19,7 @@ namespace Sport
         [Display(Name = "Ім'я")]
         [Required(ErrorMessage = "Поле не повинно бути порожнім ")]
         [RegularExpression(@"^[А-Яа-яёЁЇїІіЄєҐґ]+", ErrorMessage = "Поле має містити лише букви")]
+        [StringLength(50)]
 
 
 
@@ -26,6 +27,7 @@ namespace Sport
         [Display(Name = "Прізвище")]
         [Required(ErrorMessage = "Поле не повинно бути порожнім ")]
         [RegularExpression(@"^[А-Яа-яёЁЇїІіЄєҐґ]+", ErrorMessage = "Поле має містити лише букви")]
+        [StringLength(50)]
 
 
 
@@ -33,13 +35,12 @@ namespace Sport
         public string Surname { get; set; }
         [Display(Name = "Номер телефону")]
         [Required(ErrorMessage = "Поле не повинно бути порожнім ")]
-        [RegularExpression(@"^[0-9]{6}$", ErrorMessage = "Некоректна довжина")]
+        [RegularExpression(@"^[0-9]{6}$", ErrorMessage = "Поле має містити лише цифри")]
 
 
         public string Phone { get; set; }
         [Display(Name = "Електронна пошта")]
         [Required(ErrorMessage = "Поле не повинно бути порожнім ")]
-        [StringLength(30)]
 
         public string Email { get; set; }
         [Display(Name = "Тренер")]

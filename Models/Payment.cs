@@ -24,6 +24,7 @@ namespace Sport
         public bool? IsPaymentDone { get; set; }
         [Required(ErrorMessage = "Поле не повинно бути порожнім")]
         [Display(Name = "Сума")]
+        [RegularExpression(@"^[0-9]+", ErrorMessage = "Поле має містити лише цифри")]
         public decimal? Sum { get; set; }
         [Required(ErrorMessage = "Поле не повинно бути порожнім")]
         [Display(Name = "Номер картки клієнта")]

@@ -18,7 +18,7 @@ namespace Sport
         [Display(Name = "Ім'я та прізвище")]
         [Required(ErrorMessage = "Поле не повинно бути порожнім")]
         [StringLength(50)]
-        [RegularExpression(@"^[А-Яа-яёЁЇїІіЄєҐґ]+", ErrorMessage = "Поле має містити лише букви")]
+        [RegularExpression(@"^[А-Яа-яёЁЇїІіЄєҐґ ]+", ErrorMessage = "Поле має містити лише букви")]
 
         public string Name { get; set; }
         [Display(Name = "По-батькові")]
@@ -27,14 +27,14 @@ namespace Sport
         [RegularExpression(@"^[А-Яа-яёЁЇїІіЄєҐґ]+", ErrorMessage = "Поле має містити лише букви")]
 
         public string Surname { get; set; }
-        [Display(Name = "Заробітня плата")]
+        [Display(Name = "Заробітна плата")]
         [Required(ErrorMessage = "Поле не повинно бути порожнім")]
-        [RegularExpression(@"^[0-9][0-9]{4,6}$", ErrorMessage = "Некоректна довжина")]
+        [RegularExpression(@"^[0-9]+$", ErrorMessage = "Поле має містити лише цифри")]
 
         public decimal Salary { get; set; }
         [Display(Name = "Номер телефону")]
         [Required(ErrorMessage = "Поле не повинно бути порожнім")]
-        [RegularExpression(@"^[0-9][0-9]{4,6}$", ErrorMessage = "Некоректна довжина")]
+        [RegularExpression(@"^[0-9]+$", ErrorMessage = "Поле має містити лише цифри")]
         public string Phone { get; set; }
         [Display(Name = "Електронна пошта")]
         //[RegularExpression(reg_email, ErrorMessage = "Некоректна електронна пошта")]

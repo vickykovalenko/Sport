@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Sport.Payment>
 
 @{
-    ViewData["Title"] = "Додати оплату";
+    ViewData["Title"] = "Оплати";
 }
 
 <h1>Оплати</h1>
@@ -43,41 +43,45 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Month)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsPaymentDone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sum)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClCardNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CompanyCardNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsOverPay)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsDebt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Client.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Passes.Id)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Редагувати</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Деталі</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Видалити</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Month)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsPaymentDone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClCardNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CompanyCardNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsOverPay)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsDebt)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Client.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Passes.Id)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Редагувати</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Деталі</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Видалити</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+<form method="get" asp-controller="Home" asp-action="Index">
+    <input type="submit" class="btn btn-secondary" value="Повернутись до меню" />
+</form>
